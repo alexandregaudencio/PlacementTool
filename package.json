@@ -9,7 +9,11 @@
     "modeling",
     "tools",
     "unity"
-  ],
+  ],  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexandregaudencio/PlacementTool.git"
+  },  
   "category": "tool",
       "author": {
       "name": "Alexandre Gaudencio",
