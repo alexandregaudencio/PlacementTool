@@ -1,0 +1,12 @@
+{
+    "name": "com.placement-tool",
+    "displayName": "Placement tool",
+    "version": "1.0.0",
+    "unity": "2019.4",
+    "description": "A simple placement tool.",
+    "type": "tools",
+    "author": {
+      "name": "Alexandre Gaudencio",
+      "email": "alexandre.gtpjr@gmail.com"
+    }
+  }
