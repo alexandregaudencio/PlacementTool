@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-public class PointClickPlacementTool : EditorWindow
+public class PlacementToolWindow : EditorWindow
 {
-    public static PointClickPlacementTool window;
+    public static PlacementToolWindow window;
     static SceneView.OnSceneFunc onSceneGUIFunc;
 
     private bool enableHelp = false;
@@ -27,7 +27,7 @@ public class PointClickPlacementTool : EditorWindow
     public static void ShowWindow()
     {
 
-        window = EditorWindow.GetWindow<PointClickPlacementTool>(false, "Placement Fool");
+        window = EditorWindow.GetWindow<PlacementToolWindow>(false, "Placement Fool");
     }
 
     void OnEnable()
