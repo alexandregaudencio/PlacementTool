@@ -102,7 +102,7 @@ public class PlacementToolWindow : EditorWindow
         if (applyXNormalRotation) surfaceNormalResult.x = clickedObject.normal.x;
         if (applyYNormalRotation) surfaceNormalResult.y = clickedObject.normal.y;
         if (applyZNormalRotation) surfaceNormalResult.z = clickedObject.normal.z;
-        prefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, surfaceNormalResult) * prefab.transform.rotation;
+        prefab.transform.rotation = Quaternion.Euler(surfaceNormalResult) * prefab.transform.rotation;
 
 
         if (selectedGroup != null)
