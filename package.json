@@ -4,8 +4,14 @@
     "version": "1.0.0",
     "unity": "2019.4",
     "description": "A simple placement tool.",
-    "type": "tools",
-    "author": {
+"keywords": [
+    "placement",
+    "modeling",
+    "tools",
+    "unity"
+  ],
+  "category": "tool",
+      "author": {
       "name": "Alexandre Gaudencio",
       "email": "alexandre.gtpjr@gmail.com"
     }
