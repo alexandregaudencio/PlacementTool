@@ -125,6 +125,7 @@ namespace PlacementTool
 
         void OnGUI()
         {
+            EditorGUILayout.Space(20);
             EditorGUILayout.BeginVertical();
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
@@ -132,22 +133,25 @@ namespace PlacementTool
             if (enabled == false)
             {
 
-                if (GUILayout.Button("Enable"))
+                if (GUILayout.Button("Enable", GUILayout.Height(30)))
                 {
                     enabled = true;
                 }
+                GUI.backgroundColor = Color.red;
+                GUILayout.Space(20);
+                GUILayout.Box("", GUILayout.ExpandWidth(true));
             }
             else if (enabled == true)
             {
 
 
-                if (GUILayout.Button("Disable"))
+                if (GUILayout.Button("Disable", GUILayout.Height(30)))
                 {
                     enabled = false;
                 }
                 GUI.backgroundColor = Color.green;
 
-
+                GUILayout.Space(20);
                 if (customOffset == false)
                 {
 
