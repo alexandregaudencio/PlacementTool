@@ -12,6 +12,8 @@ namespace PlacementTool
         private bool applyXNormalRotation = false;
         private bool applyYNormalRotation = false;
         private bool applyZNormalRotation = false;
+        private Vector3Int rotationOffset = Vector3Int.zero;
+
         private bool customOffset = false;
         private Vector3 buildPos;
         private Vector3 offSet;
@@ -103,8 +105,9 @@ namespace PlacementTool
             if (applyYNormalRotation) surfaceNormalResult.y = clickedObject.normal.y;
             if (applyZNormalRotation) surfaceNormalResult.z = clickedObject.normal.z;
             //prefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, surfaceNormalResult) * prefab.transform.rotation;
-            prefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, surfaceNormalResult) * prefab.transform.rotation;
-
+            prefab.transform.rotation = Quaternion.FromToRotation(Vector3.up, surfaceNormalResult) * prefab.transform.rotation * Quaternion.Euler(rotationOffset);
+            //TODO: REVIEW TO APPLY Rotation to camera.
+            https://chatgpt.com/c/6726806b-f5c0-800e-9b1b-688f61009f54
 
             if (selectedGroup != null)
             {
@@ -221,16 +224,28 @@ namespace PlacementTool
                 EditorGUILayout.LabelField("Apply Surface Rotation");
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField("X", GUILayout.Width(10));
-                applyXNormalRotation = EditorGUILayout.Toggle(applyXNormalRotation, GUILayout.Width(30));
+                applyXNormalRotation = EditorGUILayout.Toggle(applyXNormalRotation, GUILayout.Width(20));
                 EditorGUILayout.LabelField("Y", GUILayout.Width(10));
-                applyYNormalRotation = EditorGUILayout.Toggle(applyYNormalRotation, GUILayout.Width(30));
+                applyYNormalRotation = EditorGUILayout.Toggle(applyYNormalRotation, GUILayout.Width(20));
                 EditorGUILayout.LabelField("Z", GUILayout.Width(10));
-                applyZNormalRotation = EditorGUILayout.Toggle(applyZNormalRotation, GUILayout.Width(30));
+                applyZNormalRotation = EditorGUILayout.Toggle(applyZNormalRotation, GUILayout.Width(20));
 
                 EditorGUILayout.EndHorizontal();
+
+
                 EditorGUILayout.EndVertical();
 
+                EditorGUILayout.Space(10);
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Label("Rotation offset:", EditorStyles.boldLabel, GUILayout.Width(100));
+                EditorGUIUtility.labelWidth = 10;
+                rotationOffset.x = EditorGUILayout.IntField("X", rotationOffset.x, GUILayout.Width(50));
+                rotationOffset.y = EditorGUILayout.IntField("Y", rotationOffset.y, GUILayout.Width(50));
+                rotationOffset.z = EditorGUILayout.IntField("Z", rotationOffset.z, GUILayout.Width(50));
+                EditorGUILayout.EndHorizontal();
+
                 EditorGUILayout.Space(20);
+                EditorGUIUtility.labelWidth = 0;
 
                 EditorGUILayout.LabelField("Selected Objects:");
                 if (IsObjectSelectionOnProject())
