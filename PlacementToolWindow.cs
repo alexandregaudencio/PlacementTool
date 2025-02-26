@@ -14,7 +14,7 @@ namespace PlacementTool
         private bool applyZNormalRotation = false;
         private Vector3Int rotationOffset = Vector3Int.zero;
 
-        private bool customOffset = false;
+        private bool customOffset = true;
         private Vector3 buildPos;
         private Vector3 offSet;
         private bool instantiatePrefab = false;
@@ -154,29 +154,28 @@ namespace PlacementTool
                 }
                 GUI.backgroundColor = Color.green;
 
-                GUILayout.Space(20);
-                if (customOffset == false)
-                {
+                //GUILayout.Space(20);
+                //if (customOffset == false)
+                //{
 
 
-                    if (GUILayout.Button("Enable Custom Offset"))
-                    {
-                        customOffset = true;
-                    }
+                //    //if (GUILayout.Button("Enable Custom Offset"))
+                //    //{
+                //    //    customOffset = true;
+                //    //}
 
-                    offSet = Vector3.zero;
-                }
-                else if (customOffset == true)
-                {
+                //    offSet = Vector3.zero;
+                //}
+                //else if (customOffset == true)
+                //{
 
-                    if (GUILayout.Button("Disable Custom Offset"))
-                    {
-                        customOffset = false;
-                    }
+                //    if (GUILayout.Button("Disable Custom Offset"))
+                //    {
+                //        customOffset = false;
+                //    }
 
 
-                    offSet = EditorGUILayout.Vector3Field("Set Offset", offSet);
-                }
+                //}
 
                 EditorGUILayout.Space();
                 EditorGUILayout.Space();
@@ -220,6 +219,9 @@ namespace PlacementTool
 
                 EditorGUILayout.Space(20);
 
+                offSet = EditorGUILayout.Vector3Field("Set Offset", offSet, GUILayout.Width(200));
+
+
                 EditorGUILayout.BeginVertical();
                 EditorGUILayout.LabelField("Apply Surface Rotation");
                 EditorGUILayout.BeginHorizontal();
@@ -235,13 +237,14 @@ namespace PlacementTool
 
                 EditorGUILayout.EndVertical();
 
-                EditorGUILayout.Space(10);
+
+
                 EditorGUILayout.BeginHorizontal();
-                GUILayout.Label("Rotation offset:", EditorStyles.boldLabel, GUILayout.Width(100));
-                EditorGUIUtility.labelWidth = 10;
-                rotationOffset.x = EditorGUILayout.IntField("X", rotationOffset.x, GUILayout.Width(50));
-                rotationOffset.y = EditorGUILayout.IntField("Y", rotationOffset.y, GUILayout.Width(50));
-                rotationOffset.z = EditorGUILayout.IntField("Z", rotationOffset.z, GUILayout.Width(50));
+                //GUILayout.Label("Rotation offset: ", EditorStyles.boldLabel, GUILayout.Width(100));
+                //EditorGUIUtility.labelWidth = 10;
+                rotationOffset = EditorGUILayout.Vector3IntField("Rotation offset:", rotationOffset, GUILayout.Width(200));
+                //rotationOffset.y = EditorGUILayout.IntField("Y", rotationOffset.y, GUILayout.Width(50));
+                //rotationOffset.z = EditorGUILayout.IntField("Z", rotationOffset.z, GUILayout.Width(50));
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.Space(20);
