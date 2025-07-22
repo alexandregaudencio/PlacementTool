@@ -18,6 +18,16 @@ In the Unity editor, navigate to:
 1. Open the window: **Tools > Placement Tools**
 2. This will open the PlacementTool interface, where you can quickly start positioning your prefabs.
 
+3. Select or create a Group (GameObject parent)
+
+  
+5. Select the prefabs objects to place in the scene.
+6. Configure extra details.
+7. Click on object surface with collider component Attacked.
+
+[Demo video](Documentation~/demo.mp4).
+
+
 # Requirements
 No specific version required. 
 
