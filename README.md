@@ -25,7 +25,8 @@ In the Unity editor, navigate to:
 6. Configure extra details.
 7. Click on object surface with collider component Attacked.
 
-[Demo video](Documentation~/demo.mp4).
+[Demo video]((Documentation~/video demo.gif)
+
 
 
 # Requirements
