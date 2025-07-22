@@ -25,7 +25,8 @@ In the Unity editor, navigate to:
 6. Configure extra details.
 7. Click on object surface with collider component Attacked.
 
-[Demo video](Docs~/video demo.gif)
+[Demo video]([Docs~/video demo.gif](https://github.com/alexandregaudencio/PlacementTool/blob/main/Docs~/video%20demo.gif))
+
 
 
 
